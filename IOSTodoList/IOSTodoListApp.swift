@@ -17,8 +17,8 @@ struct IOSTodoListApp: App {
             NavigationView {
                 ListView()
                     .environment(\.locale, .init(identifier: "zh-Hans"))
-                    .environmentObject(listViewModel)
             }
+            .environmentObject(listViewModel)
         }
     }
 }

@@ -18,6 +18,7 @@
 		493688DE283D1FB800AB409D /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493688DB283D1FB800AB409D /* ListView.swift */; };
 		493688DF283D1FB800AB409D /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493688DC283D1FB800AB409D /* ListRowView.swift */; };
 		493688E2283D239300AB409D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493688E1283D239300AB409D /* ListViewModel.swift */; };
+		493688E4283D38F500AB409D /* NoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493688E3283D38F500AB409D /* NoItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		493688DB283D1FB800AB409D /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		493688DC283D1FB800AB409D /* ListRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		493688E1283D239300AB409D /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		493688E3283D38F500AB409D /* NoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				493688DA283D1FB800AB409D /* AddView.swift */,
 				493688DB283D1FB800AB409D /* ListView.swift */,
 				493688DC283D1FB800AB409D /* ListRowView.swift */,
+				493688E3283D38F500AB409D /* NoItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				493688DD283D1FB800AB409D /* AddView.swift in Sources */,
+				493688E4283D38F500AB409D /* NoItemView.swift in Sources */,
 				493688D8283D1FAE00AB409D /* ItemModel.swift in Sources */,
 				493688E2283D239300AB409D /* ListViewModel.swift in Sources */,
 				493688DE283D1FB800AB409D /* ListView.swift in Sources */,
