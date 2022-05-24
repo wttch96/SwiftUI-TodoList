@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct IOSTodoListApp: App {
+    
+    @StateObject var listViewModel: ListViewModel = ListViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ListView()
+                    .environment(\.locale, .init(identifier: "zh-Hans"))
+                    .environmentObject(listViewModel)
+            }
         }
     }
 }
