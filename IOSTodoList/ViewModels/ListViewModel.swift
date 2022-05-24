@@ -9,20 +9,25 @@ import Foundation
 
 
 class ListViewModel: ObservableObject {
-    @Published var items: [ItemModel] = []
+    private let itemKey = "todoItems"
+    
+    @Published var items: [ItemModel] = [] {
+        didSet {
+            // set 的时候调用
+            saveItems()        }
+    }
     
     init() {
         getItems()
     }
     
     func getItems() {
-        let newItems = [
-            ItemModel(title: "第一个项目"),
-            ItemModel(title: "第二个项目", isCompleted: true),
-            ItemModel(title: "第三个")
-        ]
+        // 守卫，不存在立即返回
+        guard let data = UserDefaults.standard.data(forKey: itemKey) else { return }
+        // 守卫，转换失败立即返回
+        guard let savedItems = try? JSONDecoder().decode([ItemModel].self, from: data) else { return }
         
-        items.append(contentsOf: newItems)
+        self.items = savedItems
     }
     
     func removeItem(indexSet: IndexSet) {
@@ -45,4 +50,10 @@ class ListViewModel: ObservableObject {
         }
     }
     
+    func saveItems() {
+        // 转换为 json 保存
+        if let encodedData = try? JSONEncoder().encode(items) {
+            UserDefaults.standard.set(encodedData, forKey: itemKey)
+        }
+    }
 }
