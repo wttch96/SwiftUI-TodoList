@@ -22,10 +22,13 @@ class ListViewModel: ObservableObject {
     }
     
     func getItems() {
-        // 守卫，不存在立即返回
-        guard let data = UserDefaults.standard.data(forKey: itemKey) else { return }
-        // 守卫，转换失败立即返回
-        guard let savedItems = try? JSONDecoder().decode([ItemModel].self, from: data) else { return }
+        guard
+            // 可以同时守卫多个变量, 不过需要逗号将多个let语句分割开来
+            // 守卫，不存在立即返回
+            let data = UserDefaults.standard.data(forKey: itemKey),
+            // 守卫，转换失败立即返回
+            let savedItems = try? JSONDecoder().decode([ItemModel].self, from: data)
+        else { return }
         
         self.items = savedItems
     }
