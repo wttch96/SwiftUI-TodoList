@@ -43,6 +43,7 @@ struct NoItemView: View {
                     y: animate ? 50: 30
                 )
             }
+            .frame(maxWidth: 400)
             .multilineTextAlignment(.center)
             .onAppear(perform: addAnimation)
         }

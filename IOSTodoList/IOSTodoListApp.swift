@@ -18,6 +18,8 @@ struct IOSTodoListApp: App {
                 ListView()
                     .environment(\.locale, .init(identifier: "zh-Hans"))
             }
+            // 可以使ipad的 navigationView 样式改变
+            .navigationViewStyle(StackNavigationViewStyle())
             .environmentObject(listViewModel)
         }
     }

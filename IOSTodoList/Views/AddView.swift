@@ -14,7 +14,7 @@ struct AddView: View {
     
     @State var newTodoText = ""
     
-    let backgroundColor = Color(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1))
+    let backgroundColor = Color(UIColor.secondarySystemBackground)
     
     let minCount = 3
     
@@ -26,7 +26,7 @@ struct AddView: View {
         ScrollView {
             VStack {
                 TextField("请在这里输入项目...", text: $newTodoText)
-                    .foregroundColor(.white)
+                    .foregroundColor(.accentColor)
                     .font(.headline)
                     .padding(.horizontal)
                     .frame(height: 55)
@@ -75,9 +75,17 @@ struct AddView: View {
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            AddView()
+        Group {
+            NavigationView {
+                AddView()
+            }
+            .preferredColorScheme(.light)
+            .environmentObject(ListViewModel())
+            NavigationView {
+                AddView()
+            }
+            .preferredColorScheme(.dark)
+            .environmentObject(ListViewModel())
         }
-        .environmentObject(ListViewModel())
     }
 }
